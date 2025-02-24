@@ -26,7 +26,6 @@
     overflow-y: auto;
     max-height: calc(100vh - 60px);
     width: 100%;
-
     scrollbar-width: none;
 }
 
@@ -82,7 +81,7 @@
 }
 
 .logo-container::after {
-    bottom: 0;
+    bottom: 60px;
     background: linear-gradient(to top, rgba(30, 31, 34, 0.8), transparent);
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -96,20 +95,65 @@
     opacity: 0;
 }
 
-.server-wrapper:hover .highlight{
+.server-wrapper:hover .highlight,
+.discover-wrapper:hover .highlight{
     height: 27.5px;
     width: 3.8px;
+    opacity: 1;
 }
 
-.server-wrapper:active .highlight{
+.server-wrapper:active .highlight,
+.discover-wrapper:active .highlight{
     height: 55px;
     width: 3.8px;
+    opacity: 1;
 }
 
-.discover {
-    background-color: white;
+.discover{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
     width: 100%;
 }
+.discover-wrapper{
+    display: flex;
+}
+
+.discover-wrapper .highlight{
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    color: white;
+    background-color: oklab(0.321044 -0.000249296 -0.00927344)
+    ;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+.material-symbols-outlined:hover{
+    background-color: rgb(88, 101, 242);
+    border-radius: 30%;
+}
+
 
 .sidebar-info{
     background-color: #2c2d30;
