@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <div class="search-bar">
+                <input type="text" id="city" placeholder="Enter City" />
+                <button onclick="getWeather()" class="search-button">Get Weather</button>
+            </div>
+
+            <div id="weather-info" class="weather-info">
+                <div class="section-left">
+                    <img id="weather-icon" src="" alt="Weather Icon">
+                    <p id="temperature">-- °C</p>
+                </div>
+                <div class="section-right">
+                <h2 id="location">City, Country</h2>                
+                <p id="description">Weather description</p>
+                </div>
+            </div>
+
+            <button id="toggle-mode">Toggle Dark/Light Mode</button>
+        </div>
+    </div>
+</body>
+</html>
