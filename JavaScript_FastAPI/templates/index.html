@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
     <title>Weather</title>
 </head>
 <body>
@@ -34,27 +34,16 @@
 
     <script>
         async function getWeather() {
-            const city = document.getElementbyId("city").value;
-            if (!city) {
-                alert("Please enter a city name.");
-            }
+            const city = document.getElementById("city").value;
+            const response = await fetch(`/api/weather?city=${encodeURIComponent(city)}`);
+            const data = await response.json();
+            console.log(data);
 
-            try {
-                const response = await fetch(`/weather?city=${city}`);
-                
-                if (!response.ok) {
-                    throw new Error (`HTTP error! Status: ${response.status}`);
-                }
-                const data = await response.json();
-
-                document.getElementById("location").innerHTML = `${data.name}, ${data.sys.country}`;
-                document.getElementById("temperature").innerHTML = `{Math.round(data.main.temp)} °C`;
-                document.getElementById("description").innerHTML = data.weather[0].description;
-                document.getElementById("weather-icon").src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-            } catch (error) {
-                console.error("Error fetching weather data:", error);
-                alert("Failed to fetch weater data. Please try again.");
-            }
+            document.getElementById("location").innerHTML = data.city;
+            document.getElementById("description").innerHTML = data.description;
+            document.getElementById("temperature").innerHTML = data.temperature;
+            document.getElementById("weather-icon").src = data.icon;
+            
         }
     </script>
 </body>

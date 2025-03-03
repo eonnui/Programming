@@ -18,7 +18,7 @@ body {
 .wrapper {
     width: 70%;
     max-width: 600px;
-    min-width: 300px;
+    min-width: 600px;
     height: auto;
     background-color: #FFFFFF;
     display: flex;
@@ -70,11 +70,17 @@ input::placeholder{
     display: flex;
     margin-top: 30px;
     width: 100%;
-    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;
 }
 
 .section-left, .section-right {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-width: 200px;
+    flex-wrap: wrap;
 }
+
