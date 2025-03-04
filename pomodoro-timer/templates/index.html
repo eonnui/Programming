@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=restart_alt" />
+
 
 
 </head>
@@ -19,7 +21,14 @@
             <button id="long-break" onclick="setActive(this)">Long Break</button>
         </div>
         <div class="timer" id="timer">25:00</div>
-        <button onclick="startTimer()" id="start" class="start">START</button>
+        <div class="timer-buttons">
+            <div class="start-container">
+                <button onclick="startTimer()" id="start" class="start">START</button>
+            </div>
+            <span class="material-symbols-outlined reset-button" id="reset" onclick="resetTimer()">
+            restart_alt
+            </span>
+        </div>
     </div>
     
     <script>
@@ -51,6 +60,7 @@
 
             selectedTime = clickedButton.id;
             updateTimerDisplay(timeMapping[selectedTime]);
+            timeLeft = timeMapping[selectedTime];
         }
 
         function updateTimerDisplay(seconds) {
@@ -60,8 +70,6 @@
         }
 
         function startCountdown() {
-
-            timeLeft = timeMapping[selectedTime];
 
             clearInterval(interval);
 
@@ -80,9 +88,8 @@
         }
 
         function startTimer(){
-           
-
             if (isRunning) {
+                document.getElementById('reset').style.opacity = 0;
                 clearInterval(interval);
                 startButton.textContent = "START";
                 isRunning = false;
@@ -92,9 +99,19 @@
                 }
                 isRunning = true;
                 startButton.textContent = "PAUSE";
+                document.getElementById('reset').style.opacity = 1;
                 startCountdown();
             };
         };
+
+        function resetTimer(){
+            clearInterval(interval);
+            startButton.textContent = "START";
+            updateTimerDisplay(timeMapping[selectedTime]);
+            timeLeft = timeMapping[selectedTime]
+            isRunning = false;
+            document.getElementById('reset').style.opacity = 0;
+        }
 
 
     </script>

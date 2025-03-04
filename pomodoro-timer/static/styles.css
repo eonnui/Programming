@@ -80,3 +80,35 @@ body {
 .start:hover {
     background-color: #8F9D85; /* Muted Moss Green */
 }
+
+.timer-buttons {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.start-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.reset-button {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    color: #B3A398;
+    opacity: 0;
+    transition: opacity 0.5 ease;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24
+}
