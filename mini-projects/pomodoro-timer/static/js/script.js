@@ -1,45 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍅</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=restart_alt" />
-
-
-
-</head>
-<body>
-
-    <div class="pomodoro">
-        <div class="timer-type">
-            <button id="pomodoro-timer" onclick="setActive(this)">Pomodoro</button>
-            <button id="short-break" onclick="setActive(this)">Short Break</button>
-            <button id="long-break" onclick="setActive(this)">Long Break</button>
-        </div>
-        <div class="timer" id="timer">25:00</div>
-        <div class="timer-buttons">
-            <div class="start-container">
-                <button onclick="startTimer()" id="start" class="start">START</button>
-            </div>
-            <span class="material-symbols-outlined reset-button" id="reset" onclick="resetTimer()">
-            restart_alt
-            </span>
-        </div>
-
-        
-    </div>
-        <footer class="copyright">
-            <span id="year"></span> 
-            <a href="https://github.com/eonnui"> @eonnui </a>. All Rights Reserved. &copy; 
-        </footer>
-    <script>
-        const zenSound = new Audio('../audio/wind_chimes_1_16.wav');
+const zenSound = new Audio('../audio/wind_chimes_1_16.wav');
         const zenPing = new Audio('../audio/click.wav');
 
         document.getElementById('pomodoro-timer').classList.add('active');
@@ -152,7 +111,3 @@
 
             document.getElementById('year').textContent = new Date().getFullYear();
         };
-
-    </script>
-</body>
-</html>
