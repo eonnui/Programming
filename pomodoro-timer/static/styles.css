@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    text-align: center;
+}
+
+h1{
+}
+
+.timer{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+button{
+    border: none;
+    border-radius: 3px;
+    background-color: #4A90E2;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
