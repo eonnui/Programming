@@ -5,11 +5,10 @@
     padding: 0;
 }
 
-
-body{
+body {
     text-align: center;
-    background-color: #FAFAF5;
-    color: #232323;
+    background-color: #F8F6F3; /* Soft Ivory */
+    color: #3B403F; /* Charcoal Gray */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,7 +16,7 @@ body{
     flex-direction: column;
 }
 
-.timer{
+.timer {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 400;
@@ -30,53 +29,54 @@ body{
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.pomodoro .timer-type button{
+.pomodoro .timer-type button {
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px 12px;
     font-size: 16px;
-    color: #6A8F6B;
+    color: #8F9D85; /* Muted Moss Green */
     position: relative;
     transition: color 0.3s ease;
 }
 
-.timer-type button.active{
-    text-shadow: 0 0 0.8px currentColor;
-    color: #E6D8CF;
+.timer-type button.active {
+    text-shadow: 0 0 1px currentColor;
+    color: #8F9D85; /* Muted Moss Green */
 }
 
-.timer-type button::after{
+.timer-type button::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: -4px;
     width: 100%;
     height: 2px;
-    background-color: #6A8F6B;
+    background-color: #A3B18A; /* Soft Bamboo Green */
     opacity: 0;
-    transition: width 0.3 ease;
+    transition: opacity 0.3s ease;
 }
 
-.timer-type button:hover{
-    color: #3B403f;
-}
-.timer-type button.active{
-    color: #E6D8CF;
+.timer-type button:hover {
+    color: #727A68; /* Warm Stone Gray */
 }
 
-.timer-type button.active::after{
-    opacity: 1;
+.timer-type button.active::after {
+    opacity: 1; /* Show line for active button */
 }
 
-.start{
+.start {
     border: none;
     border-radius: 3px;
-    background-color: #A8B5A2;
+    background-color: #B3A398; /* Calm Clay */
     padding: 5px 10px;
     color: white;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.start:hover {
+    background-color: #8F9D85; /* Muted Moss Green */
+}

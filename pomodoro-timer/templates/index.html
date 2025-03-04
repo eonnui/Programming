@@ -14,16 +14,22 @@
 <body>
     <div class="pomodoro">
         <div class="timer-type">
-            <button class="pomodoro-timer">Pomodoro</button>
-            <button class="short-break">Short Break</button>
-            <button class="long-break">Long Break</button>
+            <button class="pomodoro-timer" onclick="setActive(this)">Pomodoro</button>
+            <button class="short-break" onclick="setActive(this)">Short Break</button>
+            <button class="long-break" onclick="setActive(this)">Long Break</button>
         </div>
         <div class="timer" id="timer">25:00</div>
         <button onclick="startTimer()" class="start">Start</button>
     </div>
     
     <script>
+        function setActive(clickedButton){
+            document.querySelectorAll('button').forEach(button => {
+                button.classList.remove('active');
+            });
 
+            clickedButton.classList.add('active');
+        }
     </script>
 </body>
 </html>
