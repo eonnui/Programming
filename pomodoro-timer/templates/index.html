@@ -19,10 +19,12 @@
             <button id="long-break" onclick="setActive(this)">Long Break</button>
         </div>
         <div class="timer" id="timer">25:00</div>
-        <button onclick="startTimer()" class="start">Start</button>
+        <button onclick="startTimer()" id="start" class="start">Start</button>
     </div>
     
     <script>
+        document.getElementById('pomodoro-timer').classList.add('active');
+
         let countdown = document.getElementById('timer');
         let selectedTime = "pomodoro"
         let pomodoroCount = 0;
@@ -49,6 +51,29 @@
             const minutes = Math.floor(seconds / 60);
             const secs = seconds % 60;
             countdown.textContent = `${minutes}:${secs.toString().padStart(2, '0')}`
+        }
+
+        function startTimer() {
+            let timeLeft = timeMapping[selectedTime];
+
+            clearInterval(interval);
+
+            interval = setInterval (() => {
+                timeLeft --;
+
+                updateTimerDisplay(timeLeft);
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    handleCycle();
+                }
+
+            }, 1000);
+        }
+
+        function startTimer (){
+            const startButton = document.getElementById('start')
+            startButton.textContent = "PAUSE";
         }
 
     </script>
