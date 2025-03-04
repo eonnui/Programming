@@ -5,15 +5,10 @@ Welcome to the Programming repository! This repository contains various mini-pro
 📁 Project Structure
 
 Programming/
-
 ├── mini-projects/
-
 │   ├── discord-ui/
-
 │   ├── facebook-ui/
-
 │   ├── pomodoro-timer/
-
 │   └── weather-api/
 
 📌 Mini Projects
