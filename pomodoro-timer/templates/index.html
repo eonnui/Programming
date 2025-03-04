@@ -14,21 +14,37 @@
 <body>
     <div class="pomodoro">
         <div class="timer-type">
-            <button class="pomodoro-timer" onclick="setActive(this)">Pomodoro</button>
-            <button class="short-break" onclick="setActive(this)">Short Break</button>
-            <button class="long-break" onclick="setActive(this)">Long Break</button>
+            <button id="pomodoro-timer" onclick="setActive(this)">Pomodoro</button>
+            <button id="short-break" onclick="setActive(this)">Short Break</button>
+            <button id="long-break" onclick="setActive(this)">Long Break</button>
         </div>
         <div class="timer" id="timer">25:00</div>
         <button onclick="startTimer()" class="start">Start</button>
     </div>
     
     <script>
+        let selectedTime;
+        let countdown = document.getElementById('timer');
+
         function setActive(clickedButton){
             document.querySelectorAll('button').forEach(button => {
                 button.classList.remove('active');
             });
 
             clickedButton.classList.add('active');
+
+            selectedTime = clickedButton.id;
+
+            if (selectedTime === "short-break"){
+                countdown.textContent = "5:00";
+            } else if (selectedTime === "long-break"){
+                countdown.textContent = "15:00";
+            } else {
+                countdown.textContent = "25:00";
+            }
+
+            
+
         }
     </script>
 </body>
