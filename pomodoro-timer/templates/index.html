@@ -14,6 +14,7 @@
 
 </head>
 <body>
+
     <div class="pomodoro">
         <div class="timer-type">
             <button id="pomodoro-timer" onclick="setActive(this)">Pomodoro</button>
@@ -29,8 +30,13 @@
             restart_alt
             </span>
         </div>
+
+        
     </div>
-    
+        <footer class="copyright">
+            <span id="year"></span> 
+            <a href="https://github.com/eonnui"> @eonnui </a>. All Rights Reserved. &copy; 
+        </footer>
     <script>
         const zenSound = new Audio('../audio/wind_chimes_1_16.wav');
         const zenPing = new Audio('../audio/click.wav');
@@ -143,6 +149,7 @@
                 setActive(document.getElementById('pomodoro-timer'));
             }
 
+            document.getElementById('year').textContent = new Date().getFullYear();
         };
 
     </script>
