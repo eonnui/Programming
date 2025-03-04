@@ -34,8 +34,9 @@
     <script>
         document.getElementById('pomodoro-timer').classList.add('active');
         const startButton = document.getElementById('start');
+        const countdown = document.getElementById('timer');
+        const resetButton = document.getElementById('reset');
 
-        let countdown = document.getElementById('timer');
         let selectedTime = "pomodoro-timer"
         let pomodoroCount = 0;
         let isRunning = false;
@@ -46,73 +47,84 @@
                 "short-break": 5 * 60,
                 "long-break": 15 * 60,
                 "pomodoro-timer": 25 * 60,
-            };
-
-        function setActive(clickedButton){
-            clearInterval(interval);
-            startButton.textContent = "START";
-            isRunning = false;
-            document.querySelectorAll('button').forEach(button => {
-                button.classList.remove('active');
-            });
-
-            clickedButton.classList.add('active');
-
-            selectedTime = clickedButton.id;
-            updateTimerDisplay(timeMapping[selectedTime]);
-            timeLeft = timeMapping[selectedTime];
-        }
+        };
 
         function updateTimerDisplay(seconds) {
             const minutes = Math.floor(seconds / 60);
             const secs = seconds % 60;
             countdown.textContent = `${minutes}:${secs.toString().padStart(2, '0')}`
-        }
+        };
 
-        function startCountdown() {
+        function toggleResetButton(show){
+            resetButton.style.opacity = show ? 1 : 0;
+        };
 
+        function setActive(clickedButton){
             clearInterval(interval);
+            startButton.textContent = "START";
+            isRunning = false;
 
-            interval = setInterval (() => {
-                timeLeft --;
+            document.querySelectorAll('button').forEach(button => {
+                button.classList.remove('active');
+            });
+            clickedButton.classList.add('active');
 
-                updateTimerDisplay(timeLeft);
-
-                if (timeLeft <= 0) {
-                    isRunning = false;
-                    clearInterval(interval);
-                    handleCycle();
-                }
-
-            }, 1000);
-        }
+            selectedTime = clickedButton.id;
+            updateTimerDisplay(timeMapping[selectedTime]);
+            timeLeft = timeMapping[selectedTime];
+            toggleResetButton(false);
+        };
 
         function startTimer(){
             if (isRunning) {
-                document.getElementById('reset').style.opacity = 0;
                 clearInterval(interval);
                 startButton.textContent = "START";
-                isRunning = false;
             } else {
-                if (!timeLeft) {
-                    timeLeft = timeMapping[selectedTime];
-                }
-                isRunning = true;
+                if (!timeLeft) timeLeft = timeMapping[selectedTime];
+                interval = setInterval(() => {
+                    timeLeft --;
+
+                    updateTimerDisplay(timeLeft);
+
+                    if (timeLeft <= 0) {
+                        clearInterval(interval);
+                        isRunning = false;
+                        handleCycle();
+                    }
+
+                }, 1000);
                 startButton.textContent = "PAUSE";
-                document.getElementById('reset').style.opacity = 1;
-                startCountdown();
             };
+
+            isRunning = !isRunning;
+            toggleResetButton(isRunning);
         };
 
         function resetTimer(){
             clearInterval(interval);
-            startButton.textContent = "START";
-            updateTimerDisplay(timeMapping[selectedTime]);
-            timeLeft = timeMapping[selectedTime]
             isRunning = false;
-            document.getElementById('reset').style.opacity = 0;
-        }
+            timeLeft = timeMapping[selectedTime];
+            updateTimerDisplay(timeMapping[selectedTime]);
+            updateTimerDisplay(timeLeft);
+            startButton.textContent = "START";
+            toggleResetButton(false);
+        };
 
+        function handleCycle() {
+            if (selectedTime === "pomodoro-timer"){
+                pomodoroCount++;
+                console.log(`Pomodoros completed: ${pomodoroCount}`);
+                
+                if (pomodoroCount % 4 === 0) {
+                    setActive(document.getElementById('long-break'));
+                } else {
+                    setActive(document.getElementById('short-break'));
+                };
+            } else {
+                setActive(document.getElementById('pomodoro-timer'));
+            }
+
+        };
 
     </script>
 </body>
