@@ -5,10 +5,15 @@ Welcome to the Programming repository! This repository contains various mini-pro
 📁 Project Structure
 
 Programming/
+
 ├── mini-projects/
+
 │   ├── discord-ui/
+
 │   ├── facebook-ui/
+
 │   ├── pomodoro-timer/
+
 │   └── weather-api/
 
 📌 Mini Projects
@@ -47,22 +52,22 @@ Programming/
 
 🚀 How to Run
 
-Clone the repository:
+1. Clone the repository:
 
 git clone https://github.com/eonnui/Programming.git
 cd Programming/mini-projects
 
-Open any project folder and launch index.html in your browser.
+2. Open any project folder and launch index.html in your browser.
 
 📖 Future Plans
 
-Add more UI components and functionalities especially on Discord
+• Add more UI components and functionalities especially on Discord
 
-Enhance the Pomodoro timer with to-do list
+• Enhance the Pomodoro timer with to-do list
 
-Improve API handling for the Weather app and informations
+• Improve API handling for the Weather app and informations
 
-Implement user authentication for UI clones
+• Implement user authentication for UI clones
 
 📜 License
 
