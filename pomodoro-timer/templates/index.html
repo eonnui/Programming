@@ -23,8 +23,16 @@
     </div>
     
     <script>
-        let selectedTime;
         let countdown = document.getElementById('timer');
+        let selectedTime = "pomodoro"
+        let pomodoroCount = 0;
+        let interval;
+        
+        const timeMapping = {
+                "short-break": 5 * 60,
+                "long-break": 15 * 60,
+                "pomodoro-timer": 25 * 60,
+            };
 
         function setActive(clickedButton){
             document.querySelectorAll('button').forEach(button => {
@@ -34,18 +42,15 @@
             clickedButton.classList.add('active');
 
             selectedTime = clickedButton.id;
-
-            if (selectedTime === "short-break"){
-                countdown.textContent = "5:00";
-            } else if (selectedTime === "long-break"){
-                countdown.textContent = "15:00";
-            } else {
-                countdown.textContent = "25:00";
-            }
-
-            
-
+            updateTimerDisplay(timeMapping[selectedTime]);
         }
+
+        function updateTimerDisplay(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            countdown.textContent = `${minutes}:${secs.toString().padStart(2, '0')}`
+        }
+
     </script>
 </body>
 </html>
