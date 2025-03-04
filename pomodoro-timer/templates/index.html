@@ -19,15 +19,18 @@
             <button id="long-break" onclick="setActive(this)">Long Break</button>
         </div>
         <div class="timer" id="timer">25:00</div>
-        <button onclick="startTimer()" id="start" class="start">Start</button>
+        <button onclick="startTimer()" id="start" class="start">START</button>
     </div>
     
     <script>
         document.getElementById('pomodoro-timer').classList.add('active');
+        const startButton = document.getElementById('start');
 
         let countdown = document.getElementById('timer');
-        let selectedTime = "pomodoro"
+        let selectedTime = "pomodoro-timer"
         let pomodoroCount = 0;
+        let isRunning = false;
+        let timeLeft;
         let interval;
         
         const timeMapping = {
@@ -37,6 +40,9 @@
             };
 
         function setActive(clickedButton){
+            clearInterval(interval);
+            startButton.textContent = "START";
+            isRunning = false;
             document.querySelectorAll('button').forEach(button => {
                 button.classList.remove('active');
             });
@@ -53,8 +59,9 @@
             countdown.textContent = `${minutes}:${secs.toString().padStart(2, '0')}`
         }
 
-        function startTimer() {
-            let timeLeft = timeMapping[selectedTime];
+        function startCountdown() {
+
+            timeLeft = timeMapping[selectedTime];
 
             clearInterval(interval);
 
@@ -64,6 +71,7 @@
                 updateTimerDisplay(timeLeft);
 
                 if (timeLeft <= 0) {
+                    isRunning = false;
                     clearInterval(interval);
                     handleCycle();
                 }
@@ -71,10 +79,23 @@
             }, 1000);
         }
 
-        function startTimer (){
-            const startButton = document.getElementById('start')
-            startButton.textContent = "PAUSE";
-        }
+        function startTimer(){
+           
+
+            if (isRunning) {
+                clearInterval(interval);
+                startButton.textContent = "START";
+                isRunning = false;
+            } else {
+                if (!timeLeft) {
+                    timeLeft = timeMapping[selectedTime];
+                }
+                isRunning = true;
+                startButton.textContent = "PAUSE";
+                startCountdown();
+            };
+        };
+
 
     </script>
 </body>
