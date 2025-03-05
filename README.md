@@ -5,6 +5,7 @@ Welcome to the Programming repository! This repository contains various mini-pro
 📁 Project Structure
 
 Programming/
+
 ├── mini-projects/
 │   ├── discord-ui/
 │   ├── facebook-ui/
@@ -16,43 +17,43 @@ Programming/
 
 🟣 Discord UI Clone
 
-Description: A responsive recreation of the Discord login page and landing page.
+• Description: A responsive recreation of the Discord login page and landing page.
 
-Technologies: HTML, CSS
+• Technologies: HTML, CSS
 
-Status: In Progress
+• Status: In Progress
 
 🔵 Facebook UI Clone
 
-Description: A simple mock-up of Facebook's login page.
+• Description: A simple mock-up of Facebook's login page.
 
-Technologies: HTML, CSS
+• Technologies: HTML, CSS
 
-Status: Completed
+• Status: Completed
 
 🍅 Pomodoro Timer
 
-Description: A minimalist Pomodoro timer for productivity.
+• Description: A minimalist Pomodoro timer for productivity.
 
-Technologies: HTML, CSS, JavaScript
+• Technologies: HTML, CSS, JavaScript
 
-Status: Completed
+• Status: Completed
 
 🌦️ Weather API
 
-Description: A weather forecast app using a public weather API.
+• Description: A weather forecast app using a public weather API.
 
-Technologies: HTML, CSS, JavaScript, API Integration
+• Technologies: HTML, CSS, JavaScript, API Integration
 
-Status: In Progress
+• Status: In Progress
 
 💬 Messaging App
 
-Description: A real-time messaging app with user authentication.
+• Description: A real-time messaging app with user authentication.
 
-Technologies: FastAPI, HTML, CSS, JavaScript, SQLite
+• Technologies: FastAPI, HTML, CSS, JavaScript, SQLite
 
-Status: In Progress
+• Status: In Progress
 
 🚀 How to Run
 
