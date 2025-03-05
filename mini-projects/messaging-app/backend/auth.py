@@ -1,6 +1,6 @@
 from fastapi import HTTPException, Depends
 from sqlalchemy.orm import Session
-from database import User,SessionLocal
+from backend.database import User, SessionLocal
 import bcrypt
 
 def get_db():
