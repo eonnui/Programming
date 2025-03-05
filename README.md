@@ -1,4 +1,4 @@
-﻿📂 Programming Repository
+📂 Programming Repository
 
 Welcome to the Programming repository! This repository contains various mini-projects to enhance and showcase front-end and API-based development skills.
 
@@ -9,60 +9,71 @@ Programming/
 │   ├── discord-ui/
 │   ├── facebook-ui/
 │   ├── pomodoro-timer/
-│   └── weather-api/
+│   ├── weather-api/
+│   └── messaging-app/
 
 📌 Mini Projects
 
 🟣 Discord UI Clone
 
-• Description: A responsive recreation of the Discord login page and landing page.
+Description: A responsive recreation of the Discord login page and landing page.
 
-• Technologies: HTML, CSS
+Technologies: HTML, CSS
 
-• Status: In Progress
+Status: In Progress
 
 🔵 Facebook UI Clone
 
-• Description: A simple mock-up of Facebook's login page.
+Description: A simple mock-up of Facebook's login page.
 
-• Technologies: HTML, CSS
+Technologies: HTML, CSS
 
-• Status: Completed
+Status: Completed
 
 🍅 Pomodoro Timer
 
-• Description: A minimalist Pomodoro timer for productivity.
+Description: A minimalist Pomodoro timer for productivity.
 
-• Technologies: HTML, CSS, JavaScript
+Technologies: HTML, CSS, JavaScript
 
-• Status: Completed
+Status: Completed
 
 🌦️ Weather API
 
-• Description: A weather forecast app using a public weather API.
+Description: A weather forecast app using a public weather API.
 
-• Technologies: HTML, CSS, JavaScript, API Integration
+Technologies: HTML, CSS, JavaScript, API Integration
 
-• Status: In Progress
+Status: In Progress
+
+💬 Messaging App
+
+Description: A real-time messaging app with user authentication.
+
+Technologies: FastAPI, HTML, CSS, JavaScript, SQLite
+
+Status: In Progress
 
 🚀 How to Run
 
-1. Clone the repository:
+Clone the repository:
 
 git clone https://github.com/eonnui/Programming.git
 cd Programming/mini-projects
 
-2. Open any project folder and launch index.html in your browser.
+Open any project folder and launch index.html in your browser.
 
 📖 Future Plans
 
-• Add more UI components and functionalities especially on Discord
+Add more UI components and functionalities, especially on Discord.
 
-• Enhance the Pomodoro timer with to-do list
+Enhance the Pomodoro timer with a to-do list.
 
-• Improve API handling for the Weather app and informations
+Improve API handling for the Weather app and information.
 
-• Implement user authentication for UI clones
+Implement user authentication for UI clones.
+
+Complete real-time messaging with FastAPI and WebSockets.
 
 📜 License
 
