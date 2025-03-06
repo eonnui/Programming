@@ -12,3 +12,30 @@ showLogin.addEventListener('click', () => {
     registerForm.classList.add('hidden');
     loginForm.classList.remove('hidden');
 })
+
+
+async function handleFormSubmit(form, endpoint) {
+    const formData = new FormData(form);
+    const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+    });
+    
+    const result = await response.json();
+    alert(result.message);
+
+    if (result.success) {
+        if (endpoint === '/register') showLogin.click();
+        else window.location.href = '/dashboard';
+    }
+}
+
+registerForm.onsubmit = (e) => {
+    e.preventDefault();
+    handleFormSubmit(registerForm, '/register');   
+};
+
+loginForm.onsubmit = (e) => {
+    e.preventDefault();
+    handleFormSubmit(loginForm, '/login');
+};
