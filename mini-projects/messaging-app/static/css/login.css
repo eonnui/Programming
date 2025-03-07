@@ -91,3 +91,14 @@ button:hover{
 .hidden{
     display: none;
 }
+
+.chat-box{
+    width: 600px;
+    background-color: white;
+}
+
+.chat-box form input,
+.chat-box form button{
+    display: inline-block;
+    width: 30%;
+}
