@@ -45,7 +45,7 @@ Programming/
 
 • Technologies: HTML, CSS, JavaScript, API Integration
 
-• Status: In Progress
+• Status: Completed
 
 💬 Messaging App
 
